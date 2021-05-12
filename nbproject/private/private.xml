@@ -2,24 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/view/style.css</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/model/BanDAO.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/controller/FXMLMainController.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/model/GoiMonDAO.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/model/Mon.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/model/KhachHangDAO.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/view/FXMLPaneNeedToShowController.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/view/FXMLPaneNeedToShow.fxml</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/model/TestConnect.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/controller/ConnectDB.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/controller/FXMLLoginPageController.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/view/FXMLTestController.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/controller/FirstApp.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/view/FXMLThirdPane.fxml</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/model/MonDAO.java</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/view/FXMLTest.fxml</file>
-            <file>file:/C:/Users/redar/OneDrive/Documents/Java/JavaFX/FirstApp/src/controller/FXMLSearchKhachHangController.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
