@@ -1,0 +1,135 @@
+
+
+.linear{
+    -fx-background-color: linear-gradient (to right bottom, #4c8c83,  #2d3447); 
+}
+
+.linear-grad2{
+   -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #4c8c83, #2d3447);
+}
+
+.linear3{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #AEB6BF, #AED6F1);
+}
+ 
+.linear4{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #AED6F1, #F2F4F4);
+}
+
+.linear5{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #F5CBA7, #a2b3bd);
+}
+
+.linear6{
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #EAD95E, #E5E8E8);
+}
+
+ 
+ 
+#bevel-grey:hover {
+  -fx-color-one: #981100;
+  -fx-color-two: #981100;
+  -fx-color-three: #981100;
+}
+
+#bevel-grey:pressed {
+  -fx-color-one: #235891;
+  -fx-color-two: #235891;
+  -fx-color-three: #235891;
+}
+
+
+#tabPane {
+    -fx-tab-min-height: 2em;
+    -fx-tab-max-height: 2em;
+    -fx-tab-min-width: 0.5em;
+    -fx-tab-min-height: 0.5em;
+    -fx-padding: 0 -1 -1 0
+}
+
+.tab .tab-label {
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+    -fx-text-fill: #cf3919;
+}
+
+.tab {
+    -fx-background-color: #FFFFFF;
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 0.0;
+    -fx-padding: 0 0 0 0;
+}
+
+.tab:focused {
+    -fx-focus-color: transparent;
+}
+
+.tab-label:hover {
+    -fx-background-color: #50bcda;
+}
+
+.tab-pane *.tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab-pane:left *.tab-header-area {
+    -fx-background-insets: 0 0 0 10;
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+}
+
+.tab:selected .focus-indicator {
+    -fx-focus-color: #50bcda;
+    -fx-border-color: transparent;
+    
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #50bcda;
+}
+
+.tab:selected .tab-label { 
+    -fx-alignment: CENTER;
+    -fx-text-fill: #4BC6E6;
+    -fx-background-color: #EAEDED;
+}
+
+.button:hover {
+    -fx-scale-y: 1.05;
+    -fx-text-fill: orange;
+}
+
+.button:pressed {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+.toggle-button:hover {
+    -fx-scale-y: 1.05;
+    -fx-text-fill: orange;
+}
+
+.toggle-button:pressed {
+    -fx-scale-y: 0.95;
+    -fx-scale-x: 0.95;
+}
+
+.toggle-button:selected:focused {
+    -fx-background-color: bisque;
+}
+#my-table .table-cell {
+    -fx-alignment: CENTER;
+     /* The rest is from caspian.css */
+
+    -fx-skin: "com.sun.javafx.scene.control.skin.TableCellSkin";
+    -fx-padding: 0.166667em; /* 2px, plus border adds 1px */
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent -fx-table-cell-border-color transparent transparent;
+    -fx-border-width: 0.083333em; /* 1 */
+    -fx-cell-size: 2.0em; /* 24 */
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+
+
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" styleClass="linear-grad2" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSignupController">
+   <children>
+      <AnchorPane layoutX="300.0" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #eeeee4;">
+         <children>
+            <JFXButton fx:id="btnLogin" layoutX="281.0" layoutY="528.0" onMouseEntered="#handleMouseEntered2" onMouseExited="#handleMouseExited2" prefHeight="37.0" prefWidth="316.0" style="-fx-background-radius: 15px; -fx-background-color: #15aad4;" text="Đăng ký" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="292.0" layoutY="27.0" text="Tạo mới tài khoản" textFill="#2f2f2f">
+               <font>
+                  <Font name="Segoe UI" size="37.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="852.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/close.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="btnBack" fitHeight="46.0" fitWidth="46.0" layoutX="1.0" layoutY="3.0" onMouseClicked="#handleBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/back3.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.75" hue="1.0" saturation="-1.0" />
+         </effect>
+      </ImageView>
+      <Label layoutX="101.0" layoutY="487.0" />
+      <ImageView fitHeight="117.0" fitWidth="132.0" layoutX="77.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/adduser.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnLogin1" layoutX="29.0" layoutY="530.0" onMouseEntered="#handleMouseEntered2" onMouseExited="#handleMouseExited2" prefHeight="37.0" prefWidth="248.0" style="-fx-background-radius: 15px; -fx-background-color: #15aad4;" text="Reset all" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="188.0" fitWidth="196.0" layoutX="40.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

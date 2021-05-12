@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="parentContainer" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLMainController">
+   <children>
+      <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="863.0" prefWidth="1331.0" styleClass="linear-grad2" stylesheets="@style.css">
+         <children>
+            <JFXTabPane layoutY="58.0" prefHeight="806.0" prefWidth="1331.0" stylesheets="@style.css">
+               <tabs>
+                  <Tab fx:id="tabBanHang" text="    BÁN HÀNG                           ">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1308.0" styleClass="linear4">
+                           <children>
+                              <Label layoutX="118.0" layoutY="22.0" text="Danh sách bàn" textFill="#545103">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="21.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton id="bevel-grey" fx:id="btnThemBan" buttonType="RAISED" layoutX="22.0" layoutY="680.0" onAction="#handleThemBan" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #2596be; -fx-background-radius: 15px;" text="Thêm" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnXoaBan" buttonType="RAISED" layoutX="244.0" layoutY="680.0" onAction="#handleXoaBan" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #e25427; -fx-background-radius: 15px;" text="Xóa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnSuaBan" buttonType="RAISED" layoutX="136.0" layoutY="680.0" onAction="#handleSuaBan" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #d1bd08; -fx-background-radius: 15px;" text="Sửa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <ScrollPane fx:id="scrollPaneBan" layoutX="19.0" layoutY="62.0" pannable="true" prefHeight="426.0" prefWidth="334.0" style="-fx-border-radius: 7px;" AnchorPane.topAnchor="62.0">
+                                <content>
+                                    <VBox prefHeight="425.0" prefWidth="332.0">
+                                       <children>
+                                          <FlowPane fx:id="flowPaneBan" alignment="BASELINE_LEFT" hgap="20.0" prefHeight="448.0" prefWidth="312.0" rowValignment="TOP" vgap="20.0">
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" left="20.0" top="20.0" />
+                                             </VBox.margin>
+                                          </FlowPane>
+                                       </children>
+                                    </VBox>
+                                </content>
+                              </ScrollPane>
+                              <AnchorPane layoutX="855.0" layoutY="59.0" prefHeight="588.0" prefWidth="462.0" style="-fx-background-color: white; -fx-border-color: #f2b16b; -fx-border-radius: 7px;">
+                                 <children>
+                                    <Label layoutX="21.0" layoutY="57.0" text="Tên khách hàng:" textFill="#007bff">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblBanTT" layoutX="181.0" layoutY="14.0" prefHeight="31.0" prefWidth="155.0" text="BÀN">
+                                       <font>
+                                          <Font name="System Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="155.0" text="Giờ ra:" textFill="#ae3c3c">
+                                       <font>
+                                          <Font name="Segoe UI" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="126.0" text="Giờ vào: " textFill="#007bff">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="515.0" text="Tổng tiền: " textFill="#3d44ad">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="186.0" text="Món" textFill="#135e21">
+                                       <font>
+                                          <Font name="Segoe UI" size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="21.0" layoutY="469.0" text="Giảm giá:" textFill="#50511c">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tfSDTKhachHang" layoutX="168.0" layoutY="55.0" prefHeight="26.0" prefWidth="232.0" promptText="Nhập SĐT khách hàng" />
+                                    <JFXButton id="bevel-grey" fx:id="btnSearchKH" layoutX="416.0" layoutY="52.0" minWidth="36.0" onAction="#handleSearchKH" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: #a0dfe9; -fx-background-radius: 50px;" textFill="#fffffa">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="15.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/search.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <Label fx:id="lblTenKH" layoutX="168.0" layoutY="100.0" text="Tên khách hàng?" textFill="#007bff">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="232.0" layoutY="469.0" text="\%" textAlignment="RIGHT" textFill="#50511c">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lbTotal" layoutX="305.0" layoutY="515.0" text="?" textAlignment="RIGHT" textFill="#3d44ad">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblThoiGianVao" layoutX="111.0" layoutY="126.0" text="?" textFill="#007bff">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView id="my-table" fx:id="tbvMonTT" layoutX="18.0" layoutY="184.0" onMouseClicked="#tbvMouseClick" prefHeight="273.0" prefWidth="427.0" style="-fx-border-color: gray; -fx-border-radius: 7px;" styleClass="table-cell" stylesheets="@style.css">
+                                       <columns>
+                                          <TableColumn fx:id="clTenMonTT" prefWidth="161.0" text="Tên món" />
+                                          <TableColumn fx:id="clDVTTT" prefWidth="61.0" text="ĐVT" />
+                                          <TableColumn fx:id="clDonGIaTT" prefWidth="107.0" text="Đơn giá" />
+                                          <TableColumn fx:id="clSoLuongTT" prefWidth="107.0" text="Số lượng" />
+                                       </columns>
+                                    </TableView>
+                                    <TextField fx:id="tfGiamGia" layoutX="121.0" layoutY="466.0" prefHeight="31.0" prefWidth="94.0" />
+                                    <Label layoutX="407.0" layoutY="513.0" text="VNĐ" textAlignment="RIGHT" textFill="#3d44ad">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton id="bevel-grey" fx:id="btnGiamGia" buttonType="RAISED" layoutX="270.0" layoutY="464.0" onAction="#handleGiamGia" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="175.0" style="-fx-background-color: #21B4A8; -fx-background-radius: 15px;" text="Áp dụng giảm giá" textFill="#fffffa">
+                                       <font>
+                                          <Font name="Segoe UI Bold" size="15.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../image/discount.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </JFXButton>
+                                    <Label fx:id="lblThongBao" layoutX="65.0" layoutY="550.0" prefHeight="26.0" prefWidth="359.0" textFill="RED">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <JFXButton id="bevel-grey" fx:id="btnPay" buttonType="RAISED" contentDisplay="RIGHT" layoutX="879.0" layoutY="665.0" onAction="#handlePay" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="45.0" prefWidth="198.0" style="-fx-background-color: #07669c; -fx-background-radius: 15px;" text="Thanh toán" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/pay.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Label layoutX="22.0" layoutY="604.0" style="-fx-background-color: white; -fx-background-radius: 5px; -fx-border-style: dotted; -fx-border-radius: 5px; -fx-border-color: blue; -fx-border-width: 2px;" text="Bàn trống">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="642.0" style="-fx-background-color: #b6e7c9; -fx-background-radius: 5px; -fx-border-style: dotted; -fx-border-radius: 5px;" text="Bàn đang phục vụ">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="359.0" layoutY="3.0" orientation="VERTICAL" prefHeight="727.0" prefWidth="25.0" />
+                              <Separator layoutX="833.0" layoutY="2.0" orientation="VERTICAL" prefHeight="729.0" prefWidth="8.0" />
+                              <Label layoutX="320.0" layoutY="603.0" text="bàn">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="319.0" layoutY="635.0" prefHeight="33.0" prefWidth="27.0" text="bàn">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblBantrong" layoutX="272.0" layoutY="602.0" text="?">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblBanPV" layoutX="272.0" layoutY="642.0" text="?">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="513.0" layoutY="22.0" text="Danh sách món" textFill="#001df8">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1047.0" layoutY="22.0" text="Tạm tính" textFill="RED">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="21.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="404.0" layoutY="63.0" text="Tìm nhanh" textFill="#007bff">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="406.0" layoutY="101.0" text="Loại đồ uống" textFill="#007bff">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutX="582.0" layoutY="60.0" prefHeight="26.0" prefWidth="232.0" promptText="Nhập tên đồ uống" />
+                              <TableView id="my-table" fx:id="tbvMon" layoutX="389.0" layoutY="148.0" onMouseClicked="#tbvMouseClick" prefHeight="417.0" prefWidth="429.0" style="-fx-border-color: gray; -fx-border-radius: 7px;" styleClass="table-cell" stylesheets="@style.css">
+                                <columns>
+                                  <TableColumn fx:id="clTenMon" prefWidth="191.0" text="Tên món" />
+                                  <TableColumn fx:id="clDVT" prefWidth="61.0" text="ĐVT" />
+                                    <TableColumn fx:id="clDonGIa" prefWidth="176.0" text="Đơn giá" />
+                                </columns>
+                              </TableView>
+                              <JFXComboBox fx:id="cbbMon" layoutX="582.0" layoutY="98.0" onAction="#cbbOnAction" prefHeight="31.0" prefWidth="233.0" />
+                              <JFXButton id="bevel-grey" fx:id="btnHuyMon" buttonType="RAISED" layoutX="448.0" layoutY="680.0" onAction="#handleHuyMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #FA4B3D; -fx-background-radius: 15px;" text="Hủy" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/cancel_1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnThemMon" buttonType="RAISED" layoutX="690.0" layoutY="680.0" onAction="#handleThemMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #21B4A8; -fx-background-radius: 15px;" text="OK" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/OK.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Label fx:id="lblGoiMon" alignment="CENTER" contentDisplay="CENTER" layoutX="393.0" layoutY="583.0" lineSpacing="2.0" prefHeight="43.0" prefWidth="360.0" style="-fx-background-color: #76D7C4; -fx-background-radius: 7px; -fx-border-color: gray; -fx-border-radius: 7px;" text="Label" textFill="#2463e1">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection />
+                                 </effect></Label>
+                              <Spinner fx:id="spnSoLuong" editable="true" layoutX="747.0" layoutY="583.0" prefHeight="43.0" prefWidth="71.0" style="-fx-border-radius: 7px; -fx-background-color: #5BBAC8; -fx-border-color: #5BBAC8;">
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </Spinner>
+                              <JFXButton id="bevel-grey" fx:id="btnHuyBan" buttonType="RAISED" layoutX="22.0" layoutY="545.0" onAction="#handleHuyBan" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="108.0" style="-fx-background-color: #FA4B3D; -fx-background-radius: 15px;" text="Hủy bàn" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/cancel_1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnDatBan" buttonType="RAISED" layoutX="242.0" layoutY="545.0" onAction="#handleDatBan" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="108.0" style="-fx-background-color: #21B4A8; -fx-background-radius: 15px;" text="Đặt bàn" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/OK.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Label fx:id="lblBanSelected" layoutX="159.0" layoutY="506.0" text="Bàn" textFill="#ff0f0f">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="100.0" layoutX="194.0" layoutY="521.0" startX="34.0" />
+                              <Line endX="6.0" layoutX="134.0" layoutY="521.0" startX="-59.0" />
+                              <Line endX="-35.748538970947266" endY="-2.781860828399658" layoutX="119.0" layoutY="533.0" rotate="90.0" startX="-53.4059944152832" startY="-2.7818727493286133" />
+                              <Line endX="-35.748538970947266" endY="-2.781860828399658" layoutX="339.0" layoutY="533.0" rotate="90.0" startX="-53.4059944152832" startY="-2.7818727493286133" />
+                              <JFXButton id="bevel-grey" fx:id="btnPrintBill" buttonType="RAISED" contentDisplay="RIGHT" layoutX="1106.0" layoutY="665.0" onAction="#handlPrintBill" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="45.0" prefWidth="198.0" style="-fx-background-color: #84FF00; -fx-background-radius: 15px;" text="In hóa đơn">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/bill.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/sale.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="tabQLNS" text="    QUẢN LÝ NHÂN SỰ                     ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="linear3" stylesheets="@style.css">
+                           <children>
+                              <JFXButton id="bevel-grey" fx:id="btnThemNV" buttonType="RAISED" layoutX="138.0" layoutY="627.0" onAction="#handleThemNV" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #2596be; -fx-background-radius: 15px;" text="Thêm" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnXoaNV" buttonType="RAISED" layoutX="388.0" layoutY="627.0" onAction="#handleXoaNV" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #e25427; -fx-background-radius: 15px;" text="Xóa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnSuaNV" buttonType="RAISED" layoutX="269.0" layoutY="627.0" onAction="#handleSuaNV" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #d1bd08; -fx-background-radius: 15px;" text="Sửa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TableView fx:id="tbvNhanVien" layoutX="39.0" layoutY="118.0" prefHeight="421.0" prefWidth="636.0">
+                                <columns>
+                                  <TableColumn fx:id="clMaNV" prefWidth="107.0" text="Mã nhân viên" />
+                                  <TableColumn fx:id="clTenNV" prefWidth="145.0" text="Tên nhân viên" />
+                                    <TableColumn fx:id="clNgaySinhNV" prefWidth="97.0" text="Ngày sinh" />
+                                    <TableColumn fx:id="clDiaChiNV" prefWidth="159.0" text="Địa chỉ" />
+                                    <TableColumn fx:id="clSDTNV" prefWidth="127.0" text="SĐT" />
+                                </columns>
+                              </TableView>
+                              <VBox layoutX="716.0" layoutY="122.0" prefHeight="423.0" prefWidth="68.0" spacing="17.0">
+                                 <children>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_membership_card_32px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_user_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_calendar_30_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_user_location_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_office_phone_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_homosexual_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_contact_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_good_pincode_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView>
+                                       <image>
+                                          <Image url="@../image/icons8_user_shield_30px.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="802.0" layoutY="117.0" prefHeight="423.0" prefWidth="493.0" spacing="15.0">
+                                 <children>
+                                    <JFXTextField promptText="Mã nhân viên" />
+                                    <JFXTextField promptText="Tên nhân viên" />
+                                    <JFXDatePicker promptText="Ngày sinh" />
+                                    <JFXTextField promptText="Địa chỉ" />
+                                    <JFXTextField promptText="Số điện thoại" />
+                                    <JFXRadioButton text="Nam">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="tgGender" />
+                                       </toggleGroup>
+                                    </JFXRadioButton>
+                                    <JFXRadioButton text="Nữ" toggleGroup="$tgGender" />
+                                    <JFXTextField promptText="User name" />
+                                    <JFXTextField promptText="Password" />
+                                    <JFXComboBox prefHeight="31.0" prefWidth="244.0" promptText="Quyền" />
+                                 </children>
+                              </VBox>
+                              <Label layoutX="516.0" layoutY="47.0" />
+                              <Label layoutX="502.0" layoutY="28.0" text="THÔNG TIN NHÂN SỰ" textFill="#005aff">
+                                 <font>
+                                    <Font name="Segoe UI" size="30.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="67.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/manager.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="tabQLHH" text="    QUẢN LÝ HÀNG HÓA                     ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="linear5">
+                           <children>
+                              <JFXButton id="bevel-grey" fx:id="btnThemMon" buttonType="RAISED" layoutX="157.0" layoutY="679.0" onAction="#handleThemMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #2596be; -fx-background-radius: 15px;" text="Thêm" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnXoaMon" buttonType="RAISED" layoutX="398.0" layoutY="679.0" onAction="#handleXoaMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #e25427; -fx-background-radius: 15px;" text="Xóa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnSuaMon" buttonType="RAISED" layoutX="278.0" layoutY="679.0" onAction="#handleSuaMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #d1bd08; -fx-background-radius: 15px;" text="Sửa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Label layoutX="211.0" layoutY="18.0" text="QUẢN LÝ DANH MỤC" textFill="#0f4699">
+                                 <font>
+                                    <Font name="Segoe UI" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="741.0" layoutY="12.0" orientation="VERTICAL" prefHeight="711.0" prefWidth="1.0" />
+                              <Label layoutX="985.0" layoutY="17.0" text="NHẬP KHO" textFill="#901515">
+                                 <font>
+                                    <Font name="Segoe UI" size="30.0" />
+                                 </font>
+                              </Label>
+                              <VBox layoutX="542.0" layoutY="363.0" spacing="21.0">
+                                 <children>
+                                    <TextField promptText="Mã món" />
+                                    <TextField promptText="Tên món" />
+                                    <TextField promptText="Mã loại" />
+                                    <TextField promptText="Đơn vị tính" />
+                                    <TextField promptText="Đơn giá" />
+                                    <TextField promptText="Số lượng tồn" />
+                                 </children>
+                              </VBox>
+                              <JFXButton id="bevel-grey" fx:id="btnLoaiMon" buttonType="RAISED" layoutX="157.0" layoutY="247.0" onAction="#handleThemLoaiMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #2596be; -fx-background-radius: 15px;" text="Thêm" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/add.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnXoaLoaiMon" buttonType="RAISED" layoutX="398.0" layoutY="247.0" onAction="#handleXoaLoaiMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="104.0" style="-fx-background-color: #e25427; -fx-background-radius: 15px;" text="Xóa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton id="bevel-grey" fx:id="btnSuaLoaiMon" buttonType="RAISED" layoutX="279.0" layoutY="247.0" onAction="#handleSuaLoaiMon" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #d1bd08; -fx-background-radius: 15px;" text="Sửa" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="23.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TableView layoutX="20.0" layoutY="361.0" prefHeight="294.0" prefWidth="499.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Mã món" />
+                                  <TableColumn prefWidth="142.0" text="Tên món" />
+                                    <TableColumn prefWidth="65.0" text="Mã loại" />
+                                    <TableColumn prefWidth="61.0" text="ĐVT" />
+                                    <TableColumn prefWidth="84.0" text="Đơn giá" />
+                                    <TableColumn prefWidth="71.0" text="SL tồn" />
+                                </columns>
+                              </TableView>
+                              <Label layoutX="249.0" layoutY="312.0" text="QUẢN LÝ MÓN" textFill="#0f4699">
+                                 <font>
+                                    <Font name="Segoe UI" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="8.0" layoutY="300.0" prefHeight="3.0" prefWidth="724.0" />
+                              <TableView layoutX="17.0" layoutY="66.0" prefHeight="170.0" prefWidth="507.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Mã loại" />
+                                  <TableColumn prefWidth="431.0" text="Tên loại" />
+                                </columns>
+                              </TableView>
+                              <JFXButton id="bevel-grey" fx:id="btnBCTonKho" buttonType="RAISED" contentDisplay="RIGHT" layoutX="1157.0" layoutY="669.0" onAction="#handleBCTonKho" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="45.0" prefWidth="148.0" style="-fx-background-color: #76D7C4; -fx-background-radius: 15px;" text="Nhập kho">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/import.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TextField layoutX="542.0" layoutY="88.0" promptText="Mã loại" />
+                              <TextField layoutX="542.0" layoutY="174.0" promptText="Tên loại" />
+                              <TableView layoutX="767.0" layoutY="170.0" prefHeight="332.0" prefWidth="542.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="Mã món" />
+                                    <TableColumn prefWidth="142.0" text="Tên món" />
+                                    <TableColumn prefWidth="65.0" text="Mã loại" />
+                                    <TableColumn prefWidth="75.0" text="ĐVT" />
+                                    <TableColumn prefWidth="113.0" text="Đơn giá" />
+                                    <TableColumn prefWidth="77.0" text="SL tồn" />
+                                 </columns>
+                              </TableView>
+                              <Label fx:id="lblGoiMon1" alignment="CENTER" contentDisplay="CENTER" layoutX="775.0" layoutY="543.0" lineSpacing="2.0" prefHeight="43.0" prefWidth="467.0" style="-fx-background-color: #AAB7B8; -fx-background-radius: 7px; -fx-border-color: gray; -fx-border-radius: 7px;" text="Label">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="24.0" />
+                                 </font>
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </Label>
+                              <Spinner fx:id="spnSoLuong1" editable="true" layoutX="1237.0" layoutY="543.0" prefHeight="43.0" prefWidth="71.0" style="-fx-border-radius: 7px; -fx-background-color: #5BBAC8; -fx-border-color: #5BBAC8;">
+                                 <effect>
+                                    <Reflection />
+                                 </effect>
+                              </Spinner>
+                              <Label layoutX="771.0" layoutY="91.0" prefHeight="28.0" prefWidth="205.0" text="Tìm theo tên mặt hàng:" textFill="#007bff">
+                                 <font>
+                                    <Font name="Segoe UI" size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tfSDTKhachHang1" layoutX="991.0" layoutY="88.0" prefHeight="31.0" prefWidth="256.0" promptText="Nhập tên sản phẩm" />
+                              <JFXButton id="bevel-grey" fx:id="btnSearchKH1" layoutX="1267.0" layoutY="89.0" minWidth="36.0" onAction="#handleSearchKH" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="36.0" style="-fx-background-color: #a0dfe9; -fx-background-radius: 50px;" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <Label layoutX="778.0" layoutY="628.0" text="Thời gian nhập kho: " textFill="#001df8">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1002.0" layoutY="628.0" text="?" textFill="#001df8">
+                                 <font>
+                                    <Font name="Segoe UI Light" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/inventory.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab fx:id="tabBaoCao" text="   BÁO CÁO                                ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="linear6">
+                           <children>
+                              <Label layoutX="115.0" layoutY="39.0" text="Từ ngày:" textFill="#3d44ad">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="686.0" layoutY="39.0" text="Đến ngày:" textFill="#3d44ad">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <JFXDatePicker fx:id="dpFromDate" layoutX="232.0" layoutY="36.0" />
+                              <JFXDatePicker fx:id="dpToDate" layoutX="828.0" layoutY="36.0" />
+                              <Label layoutX="73.0" layoutY="663.0" text="Tổng doanh thu: " textFill="#3d44ad">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton id="bevel-grey" fx:id="btnReport" buttonType="RAISED" contentDisplay="RIGHT" layoutX="1132.0" layoutY="655.0" onAction="#handleReport" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="45.0" prefWidth="168.0" ripplerFill="WHITE" style="-fx-background-color: #db4a2b; -fx-background-radius: 15px;" text="Xuất báo cáo " textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="43.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/export.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </JFXButton>
+                              <PieChart fx:id="pieChartLoaiMon" layoutX="22.0" layoutY="120.0" prefHeight="499.0" prefWidth="539.0" style="-fx-border-color: white;" title="Doanh thu theo danh mục" />
+                              <Label layoutX="406.0" layoutY="663.0" text="VNĐ" textFill="#3d44ad">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblGrandTotal" layoutX="268.0" layoutY="663.0" text="?" textFill="#ee2727">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton id="bevel-grey" fx:id="btnBaoCao" buttonType="RAISED" layoutX="1149.0" layoutY="26.0" onAction="#handleBaoCao" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="146.0" style="-fx-background-color: #21B4A8; -fx-background-radius: 15px;" text="Báo cáo" textFill="#fffffa">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/report2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TableView fx:id="tbvBaoCao" layoutX="601.0" layoutY="120.0" prefHeight="498.0" prefWidth="707.0">
+                                <columns>
+                                  <TableColumn fx:id="clMaHDBC" prefWidth="69.0" text="Mã HĐ" />
+                                  <TableColumn fx:id="clNgayThangBC" prefWidth="179.0" text="Ngày tháng" />
+                                    <TableColumn fx:id="clNhanVienBC" prefWidth="127.0" text="Nhân viên" />
+                                    <TableColumn fx:id="clMonBC" prefWidth="136.0" text="Món" />
+                                    <TableColumn fx:id="clDVTBC" minWidth="0.0" prefWidth="60.0" text="ĐVT" />
+                                    <TableColumn fx:id="clSoLuongBC" prefWidth="135.0" text="Số lượng" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/report.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+            <Label layoutX="792.0" layoutY="14.0" text="Xin chào: " textFill="#d2d3b8">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton id="bevel-grey" fx:id="btnLogout" buttonType="RAISED" layoutX="1173.0" layoutY="9.0" onAction="#handleLogout" onMouseEntered="#handleMouseEntered" onMouseExited="#handleMouseExited" prefHeight="33.0" prefWidth="124.0" style="-fx-background-color: #d1bd08; -fx-background-radius: 15px;" text="Đăng xuất" textFill="#fffffa">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label layoutX="20.0" layoutY="14.0" text="Giờ hiện tại: " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="168.0" layoutY="9.0" style="-fx-background-radius: 5px;" text="11:22:33" textFill="#fff64e">
+               <font>
+                  <Font name="Century" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUserLogined" layoutX="892.0" layoutY="14.0" text="?" textFill="#fff64e">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
